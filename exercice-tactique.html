@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>TechFootAcademy</title>
+</head>
+<body>
+    <div class="top-bar">
+        <h1>Exercice Tactique - TechFootAcademy</h1>
+    </div>
+    <section class="top-page">
+        <img src="image/freepik-minimalist-soccer-channel-logo-2024092312361096g3.png" sizes="medium" alt="Logo TechFootAcademy">
+        <h1 style="color: white;">TechFootAcademy</h1>
+        <nav>
+            <li><a href="exercice-physique.html">Exercice Physique</a></li>
+            <li><a href="exercice-mental.html">Exercice Mental</a></li>
+            <li><a href="exercice-tactique.html">Exercice Tactique</a></li>
+            <li><a href="index.html">Accueil</a></li>
+        </nav>
+    </section>
+    
+    <div class="quiz-container">
+        <h2>Quiz sur la tactique du football</h2>
+        <div class="question">1. Quelle est la formation la plus utilisée dans le football moderne ?</div>
+        <div class="answers">
+            <label><input type="radio" name="q1" value="A"> A) 4-3-3</label>
+            <label><input type="radio" name="q1" value="B"> B) 3-5-2</label>
+            <label><input type="radio" name="q1" value="C"> C) 4-4-2</label>
+            <label><input type="radio" name="q1" value="D"> D) 5-3-2</label>
+        </div>
+        
+        <div class="question">2. Que signifie le terme « pressing haut » ?</div>
+        <div class="answers">
+            <label><input type="radio" name="q2" value="A"> A) Défendre bas sur le terrain</label>
+            <label><input type="radio" name="q2" value="B"> B) Attaquer avec plus de joueurs</label>
+            <label><input type="radio" name="q2" value="C"> C) Récupérer le ballon rapidement</label>
+            <label><input type="radio" name="q2" value="D"> D) Jouer en contre-attaque</label>
+        </div>
+        
+        <div class="question">3. Quel est le principal avantage d'une formation en 3-5-2 ?</div>
+        <div class="answers">
+            <label><input type="radio" name="q3" value="A"> A) Renforcer l'attaque</label>
+            <label><input type="radio" name="q3" value="B"> B) Plus de joueurs au milieu</label>
+            <label><input type="radio" name="q3" value="C"> C) Bloc défensif solide</label>
+            <label><input type="radio" name="q3" value="D"> D) Jouer avec des ailiers</label>
+        </div>
+
+        <div class="question">4. Que signifie « jeu en triangle » ?</div>
+        <div class="answers">
+            <label><input type="radio" name="q4" value="A"> A) Jouer dans un espace réduit</label>
+            <label><input type="radio" name="q4" value="B"> B) Mettre la pression sur l'adversaire</label>
+            <label><input type="radio" name="q4" value="C"> C) Créer des combinaisons rapides</label>
+            <label><input type="radio" name="q4" value="D"> D) Défendre en bloc bas</label>
+        </div>
+
+        <div class="question">5. Quelle est l'utilité du « faux neuf » ?</div>
+        <div class="answers">
+            <label><input type="radio" name="q5" value="A"> A) Attaquer sur les ailes</label>
+            <label><input type="radio" name="q5" value="B"> B) Réorganiser la défense adverse</label>
+            <label><input type="radio" name="q5" value="C"> C) Créer de la profondeur</label>
+            <label><input type="radio" name="q5" value="D"> D) Marquer des coups francs</label>
+        </div>
+        
+        <button onclick="showResults()">Valider</button>
+        <div id="results"></div>
+    </div>
+
+    <script>
+        function showResults() {
+            let score = 0;
+            if (document.querySelector('input[name="q1"]:checked')?.value === "A") score++;
+            if (document.querySelector('input[name="q2"]:checked')?.value === "C") score++;
+            if (document.querySelector('input[name="q3"]:checked')?.value === "B") score++;
+            if (document.querySelector('input[name="q4"]:checked')?.value === "C") score++;
+            if (document.querySelector('input[name="q5"]:checked')?.value === "B") score++;
+            document.getElementById("results").innerText = `Votre score est de ${score} sur 5.`;
+        }
+    </script>
+</body>
+</html>
+
+<style>
+    body {
+        margin: 0;
+        font-family: Arial, sans-serif;
+        background-color: #f9f9f9; 
+    }
+    .top-bar {
+        background-color: lightgray;
+        height: 40px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 23px 20px;
+        position: relative;
+        z-index: 1;
+    }
+    .top-page {
+        display: flex;
+        align-items: center;
+        padding: 10px;
+        position: relative;
+        width: 100%;
+        z-index: 2;
+        background-color: #4b4b4b;
+    }
+    img {
+        width: 50px;
+        height: auto;
+        margin-right: 20px;
+    }
+    h1 {
+        flex-grow: 1;
+        text-align: center;
+        color: rgb(0, 0, 0);
+    }
+    nav {
+        list-style: none;
+        display: flex;
+        margin: 0;
+        padding: 0;
+    }
+    nav li {
+        margin: 0 15px;
+    }
+    nav a {
+        text-decoration: none;
+        color: #f9f9f9;
+        font-weight: bold;
+    }
+    .quiz-container {
+        background: white;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 10px rgba(0,0,0,0.1);
+        margin: 100px auto;
+        width: 600px;
+    }
+    h2 {
+        color: #333;
+        text-align: center;
+    }
+    .question {
+        font-size: 18px;
+        margin: 10px 0;
+    }
+    .answers label {
+        display: block;
+        margin: 5px 0;
+    }
+    button {
+        background: #4b4b4b;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        cursor: pointer;
+        border-radius: 5px;
+        margin: 20px 0;
+        font-size: 16px;
+    }
+    #results {
+        font-size: 20px;
+        color: #333;
+        text-align: center;
+    }
+</style>
